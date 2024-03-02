@@ -26,6 +26,7 @@ function App() {
 
   return (
     <div className="App" onClick={changeColors}>
+      <h2>React Tutorial Project 2 - Random color generator</h2>
       <h2>Click background to generate new color</h2>
     </div>
   );

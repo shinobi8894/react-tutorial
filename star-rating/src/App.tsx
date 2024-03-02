@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className='App'>
+      <h2>React Tutorial Project 3 - Star Rating</h2>
       <div className='stars'>
         {
           [1, 2, 3, 4, 5].map((star) => {
