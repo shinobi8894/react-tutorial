@@ -6,6 +6,11 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* App Component Styles */
@@ -16,16 +21,27 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 0;
-  bottom: 0;
   width: 100%;
+  min-height: 100vh;
 }
 
 .App img {
   max-width: 20rem;
   height: auto;
   border-radius: 1rem;
+}
+
+.App input {
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 3rem;
+  border-radius: .5rem;
+  background-color: #2b2b2b;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  text-indent: 1rem;
 }
 
 .slider__container {
@@ -58,4 +74,22 @@ html {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.panel {
+  max-width: 30rem;
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
