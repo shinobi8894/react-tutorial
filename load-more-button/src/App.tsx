@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState, useCallback } from 'react';
 import './App.css';
+import axios from 'axios';
+
+interface Post {
+  id: number;
+  title: string;
+}
 
 function App() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [page, setPage] = useState<number>(1);
+
+  const fetchPosts = useCallback(async () => {
+    try {
+      const response = await axios.get<Post[]>(`https://jsonplaceholder.typicode.com/posts`, {
+        params: { _page: page, _limit: 5 },
+      });
+      setPosts(prevPosts => [...prevPosts, ...response.data]);
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+    }
+  }, [page]);
+
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
+
+  const handleLoadMore = useCallback(() => {
+    setPage(prevPage => prevPage + 1);
+  }, []);
+
+  const renderPosts = () => posts.map(post => <div key={post.id}>{post.title}</div>);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>React Tutorial 5 - Load More Button</h2>
+      <div className='list'>{renderPosts()}</div>
+      <button onClick={handleLoadMore}>Load More</button>
     </div>
   );
 }
