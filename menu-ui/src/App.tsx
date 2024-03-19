@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import TreeMenu from './TreeMenu';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const treeData = [
+  {
+    id: 1,
+    name: 'Item 1',
+    children: [
+      {
+        id: 2,
+        name: 'Item 1.1',
+      },
+      {
+        id: 3,
+        name: 'Item 1.2',
+        children: [
+          {
+            id: 4,
+            name: 'Item 1.2.1',
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const App = () => {
+  return <TreeMenu data={treeData} />;
+};
 
 export default App;
