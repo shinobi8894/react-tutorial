@@ -1,6 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Custom styles */
+* {
+  font-family: "Montserrat" !important;
+}
+
+
 .App {
   text-align: center;
   background-color: #0f0f0f;
   color: white;
   height: 100vh;
+  padding: 3rem;
+}
+
+
+.App h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.App button {
+  background-color: #6e6e6e;
+  border: none;
+  height: 3rem;
+  color: white;
+}
+
+.App .tab-list .active {
+  background-color: #a8a8a8;
+}
+
+.App .tab-list {
+  margin-bottom: 2rem;
 }
