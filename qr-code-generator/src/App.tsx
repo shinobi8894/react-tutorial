@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './reset.css';
 
 function App() {
   const [inputText, setInputText] = useState('');
