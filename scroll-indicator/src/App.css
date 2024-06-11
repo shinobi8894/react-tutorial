@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Custom styles */
+* {
+  font-family: "Montserrat" !important;
+}
+
+/* Scroll Indicator Styles */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #7048ff; /* Using the same color as .App-link for consistency */
+}
+
+
+.App {
+  background-color: #0f0f0f;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+.App p {
+  max-width: 40rem;
+  font-size: 1.2rem; /* Increased font size for better readability */
+  line-height: 1.6; /* Increased line height for better readability */
+}
+
+.App h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
