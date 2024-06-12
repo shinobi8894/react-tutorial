@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Custom styles */
+* {
+  font-family: "Montserrat" !important;
+  box-sizing: border-box;
+}
+
 .App {
   display: flex;
   justify-content: center;
@@ -7,21 +16,31 @@
 }
 
 .App-header {
-  width: 100%;
-  max-width: 600px;
   background: white;
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 40rem;
+  padding: 10px;
 }
 
 input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
   width: 100%;
-  margin-bottom: 20px;
-  border: 2px solid #007bff;
-  border-radius: 4px;
-  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+} 
 
 ul {
   list-style: none;
