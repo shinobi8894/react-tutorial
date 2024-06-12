@@ -4,9 +4,18 @@ import './App.css';
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [animation, setAnimation] = useState('');
 
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
+  const openModal = () => {
+    setAnimation('fadeIn 0.5s');
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setAnimation('fadeOut 0.5s');
+    setTimeout(() => {
+      setModalOpen(false);
+    }, 500); // This timeout duration should match the fadeOut animation duration
   };
 
   return (
@@ -16,13 +25,13 @@ function App() {
         <p>
           Click below to open the modal popup.
         </p>
-        <button onClick={toggleModal} className="App-link">
+        <button onClick={openModal} className="App-link">
           Open Modal
         </button>
         {isModalOpen && (
-          <div className="modal">
+          <div className="modal" style={{ animation }}>
             <div className="modal-content">
-              <span className="close" onClick={toggleModal}>&times;</span>
+              <span className="close" onClick={closeModal}>&times;</span>
               <p>Welcome to the React modal popup!</p>
               <a
                 href="https://reactjs.org"
