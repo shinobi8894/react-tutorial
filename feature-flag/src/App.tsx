@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { FeatureFlagContext, FeatureFlagProvider } from "./context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FeatureFlagProvider>
+      <FeatureFlagContext.Consumer>
+        {({ isFeatureEnabled, toggleFeatureFlag }) => (
+          <div>
+            {isFeatureEnabled("feature-a") && (
+              // Render feature-b-enabled content
+              <div>A Enabled Component</div>
+            )}
+
+            {isFeatureEnabled("feature-b") && (
+              // Render feature-b-enabled content
+              <div>B Enabled Component</div>
+            )}
+
+            {isFeatureEnabled("feature-c") && (
+              // Render feature-b-enabled content
+              <div>C Enabled Component</div>
+            )}
+
+            <div>
+              <button onClick={() => toggleFeatureFlag("feature-a")}>
+                Toggle Feature A
+              </button>
+              <button onClick={() => toggleFeatureFlag("feature-b")}>
+                Toggle Feature B
+              </button>
+              <button onClick={() => toggleFeatureFlag("feature-c")}>
+                Toggle Feature C
+              </button>
+            </div>
+          </div>
+        )}
+      </FeatureFlagContext.Consumer>
+    </FeatureFlagProvider>
   );
 }
 
