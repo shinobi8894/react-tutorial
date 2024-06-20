@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-1: #ff758c;
+  --color-2: #ff7eb3;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: relative; /* Add this line */
+  padding-bottom: 4rem; /* Add this line */
+}
+
+.App-header {
+  padding: 2rem;
+  max-width: 50%;
+  position: relative; /* Add this line */
+  z-index: 1; /* Add this line */
+}
+
+.bottom {
+  bottom: 1rem; /* Add this line */
+  left: 80%;
+}
+
+.top {
+  top: 1rem; /* Add this line */
+  left: 80%;
+}
+
+.scroll-button {
+  position: fixed; /* Change from .scroll-button to .scroll-buttons */
+  transform: translateX(-80%);
+  display: flex;
+  justify-content: center;
+  z-index: 2; /* Add this line */
+  background-color: #61dafb;
+  border: none;
+  color: #282c34;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #48b1d1;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.6;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #48b1d1;
+}
