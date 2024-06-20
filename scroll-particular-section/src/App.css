@@ -1,0 +1,80 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Custom styles */
+* {
+  font-family: "Montserrat" !important;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* App Styles */
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* App Header Styles */
+.App-header {
+  color: white;
+  padding: 2rem;
+  max-width: 50rem;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  margin-top: 1.5rem;
+}
+
+.App-link:hover {
+  color: #82deff;
+}
+
+/* Section Styles */
+section {
+  padding: 2rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  font-size: .8rem;
+}
+
+section button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+section button:hover {
+  background-color: #82deff;
+}
