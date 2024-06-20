@@ -6,23 +6,34 @@ function App() {
     <FeatureFlagProvider>
       <FeatureFlagContext.Consumer>
         {({ isFeatureEnabled, toggleFeatureFlag }) => (
-          <div>
-            {isFeatureEnabled("feature-a") && (
-              // Render feature-b-enabled content
-              <div>A Enabled Component</div>
-            )}
+          <div className="container">
+            <div className="feature-section">
+              {isFeatureEnabled("feature-a") && (
+                // Render feature-b-enabled content
+                <div>
+                  <h2>A Enabled Component</h2>
+                  <p>You enabled A</p>
+                </div>
+              )}
 
-            {isFeatureEnabled("feature-b") && (
-              // Render feature-b-enabled content
-              <div>B Enabled Component</div>
-            )}
+              {isFeatureEnabled("feature-b") && (
+                // Render feature-b-enabled content
+                <div>
+                  <h2>B Enabled Component</h2>
+                  <p>You enabled B</p>
+                </div>
+              )}
 
-            {isFeatureEnabled("feature-c") && (
-              // Render feature-b-enabled content
-              <div>C Enabled Component</div>
-            )}
+              {isFeatureEnabled("feature-c") && (
+                // Render feature-b-enabled content
+                <div>
+                  <h2>C Enabled Component</h2>
+                  <p>You enabled C</p>
+                </div>
+              )}
+            </div>
 
-            <div>
+            <div className="toggle-buttons">
               <button onClick={() => toggleFeatureFlag("feature-a")}>
                 Toggle Feature A
               </button>
